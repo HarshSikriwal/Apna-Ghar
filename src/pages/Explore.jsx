@@ -1,9 +1,9 @@
+import Navbar from "../components/Navbar"
 
 function Explore() {
   return (
     <div>
-      <h1>Explore 
-      </h1>
+        <h1 className="text-red-700">Explore</h1>
     </div>
   )
 }

@@ -8,3 +8,6 @@
   box-sizing: border-box;
   
 }
+.btn{
+  text-transform: capitalize;
+}
