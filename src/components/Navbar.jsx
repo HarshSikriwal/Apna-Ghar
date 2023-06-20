@@ -8,20 +8,20 @@ function Navbar() {
   const location = useLocation();
   return (
     <nav>
-      <div className="navbar mb-8 shadow-lg mx-auto bg-yellow-600">
+      <div className="navbar mb-8 mx-auto border-solid border-b-[1px] border-[#24c2cb]  text-[#13bec7]">
         <Link to="/">
           <div className="flex-auto ">
-            <FaHome className="inline mx-2 text-blue-800 text-3xl" />
-            <h3 className="inline align-middle text-blue-800 font-mono text-2xl">
-              ApnaGhar
-            </h3>
+            <FaHome className="inline mx-2  text-3xl" />
+            <h3 className="inline align-middle font-mono text-2xl">ApnaGhar</h3>
           </div>
         </Link>
-        <div className="md:flex flex-auto justify-end hidden mr-2 gap-8">
+        <div className="md:flex flex-auto justify-end hidden mr-2 gap-6 ">
           <Link to="/">
             <div
               className={`container  flex items-center group ${
-                location.pathname === "/" ? "text-black" : "text-slate-200"
+                location.pathname === "/"
+                  ? "text-black border-solid pb-2 border-b-4 border-[#faad09]"
+                  : "text-slate-400"
               }`}
             >
               <MdOutlineExplore className="text-2xl group-hover:scale-110" />
@@ -32,8 +32,8 @@ function Navbar() {
             <div
               className={`container flex items-center group ${
                 location.pathname === "/offers"
-                  ? "text-black"
-                  : "text-slate-200"
+                  ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
+                  : "text-slate-400"
               }`}
             >
               <TbTag className="text-2xl group-hover:scale-110" />
@@ -44,8 +44,8 @@ function Navbar() {
             <div
               className={`container flex items-center group ${
                 location.pathname === "/profile"
-                  ? "text-black"
-                  : "text-slate-200"
+                  ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
+                  : "text-slate-400"
               }`}
             >
               <FaRegUser className="text-2xl group-hover:scale-110" size="20" />

@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Layout() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col max-h-screen">
       <div className="grow">
         <Navbar />
         <ToastContainer />

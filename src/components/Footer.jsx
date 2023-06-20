@@ -6,11 +6,13 @@ import { FaRegUser } from "react-icons/fa";
 function Footer() {
   const location = useLocation();
   return (
-    <div className="navbar pb-1 px-4 bg-yellow-600 flex justify-between md:hidden">
+    <div className="navbar pb-1 px-4 bg-[#24c2cb] flex justify-between md:hidden">
       <Link to="/">
         <div
           className={`container  flex items-center group ${
-            location.pathname === "/" ? "text-black" : "text-slate-200"
+            location.pathname === "/"
+              ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
+              : "text-slate-200"
           }`}
         >
           <MdOutlineExplore className="text-2xl group-hover:scale-110" />
@@ -20,7 +22,9 @@ function Footer() {
       <Link to="/offers">
         <div
           className={`container flex items-center group ${
-            location.pathname === "/offers" ? "text-black" : "text-slate-200"
+            location.pathname === "/offers"
+              ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
+              : "text-slate-200"
           }`}
         >
           <TbTag className="text-2xl group-hover:scale-110" />
@@ -30,7 +34,9 @@ function Footer() {
       <Link to="/profile">
         <div
           className={`container flex items-center group ${
-            location.pathname === "/profile" ? "text-black" : "text-slate-200"
+            location.pathname === "/profile"
+              ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
+              : "text-slate-200"
           }`}
         >
           <FaRegUser className="text-2xl group-hover:scale-110" size="20" />

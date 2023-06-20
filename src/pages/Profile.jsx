@@ -25,24 +25,30 @@ function Profile() {
     navigate("/");
   };
   const onSubmit = () => {};
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.id]: e.target.value,
+    }));
+  };
 
   return (
     <>
       <div className="mx-2">
         <header className="flex justify-between mb-6">
-          <p className="text-2xl font-bold">My Profile</p>
+          <p className="text-2xl font-bold">Hello, {name}</p>
           <button
             type="button"
-            className="btn btn-success btn-sm py-0"
+            className="btn border-solid border-b-4 border-[#faad09] btn-sm py-0 hover:border-solid hover:border-b-2 hover:border-[#faad09]"
             onClick={onLogout}
           >
             LogOut
           </button>
         </header>
         <main>
-          <div className="card">
-            <div className="card-title justify-between">
-              <h3>User Details</h3>
+          <div>
+            <div className="flex justify-between">
+              <h3>Your Profile</h3>
               <button
                 onClick={() => {
                   changeDetails && onSubmit();
@@ -56,7 +62,26 @@ function Profile() {
                 )}
               </button>
             </div>
-            <div className="card-body"></div>
+            <div className="card card-compact border-solid p-4 border-2 border-[#24c2cb]">
+              <form>
+                <input
+                  type="text"
+                  id="name"
+                  value={name}
+                  onChange={onChange}
+                  className=""
+                  disabled={!changeDetails}
+                />
+                <input
+                  type="text"
+                  id="email"
+                  value={email}
+                  onChange={onChange}
+                  className=""
+                  disabled={!changeDetails}
+                />
+              </form>
+            </div>
           </div>
         </main>
       </div>
