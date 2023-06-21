@@ -8,12 +8,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Layout() {
   return (
-    <div className="flex flex-col max-h-screen">
-      <div className="grow">
-        <Navbar />
-        <ToastContainer />
-        <Outlet />
-      </div>
+    <div className="flex flex-col h-screen">
+      <Navbar />
+      <ToastContainer />
+      <Outlet />
+
       <Footer />
     </div>
   );

@@ -42,7 +42,7 @@ function SignIn() {
 
   return (
     <>
-      <div className="absolute container p-4 w-full md:w-1/3">
+      <div className="container p-4 md:w-1/3">
         <header>
           <p className="font-bold text-2xl mb-12">Welcome Back!</p>
         </header>

@@ -40,16 +40,16 @@ function Navbar() {
               <div className="text-lg pl-1">Offers</div>
             </div>
           </Link>
-          <Link to="/profile">
+          <Link to="/account/profile">
             <div
               className={`container flex items-center group ${
-                location.pathname === "/profile"
+                location.pathname === "/account"
                   ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
                   : "text-slate-400"
               }`}
             >
               <FaRegUser className="text-2xl group-hover:scale-110" size="20" />
-              <div className="text-lg pl-1">Profile</div>
+              <div className="text-lg pl-1">Account</div>
             </div>
           </Link>
         </div>

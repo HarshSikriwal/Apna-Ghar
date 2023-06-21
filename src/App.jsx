@@ -7,6 +7,8 @@ import Offers from "./pages/Offers";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
+import Account from "./pages/Account";
+import Listing from "./pages/Listing";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,8 +26,18 @@ function App() {
           element: <Offers />,
         },
         {
-          path: "/profile",
-          element: <Profile />,
+          path: "/account",
+          element: <Account />,
+          children: [
+            {
+              path: "profile",
+              element: <Profile />,
+            },
+            {
+              path: "listing",
+              element: <Listing />,
+            },
+          ],
         },
         {
           path: "/sign-in",
