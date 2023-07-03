@@ -8,7 +8,7 @@ function Navbar() {
   const location = useLocation();
   return (
     <nav>
-      <div className="navbar mb-8 mx-auto border-solid border-b-[1px] border-[#24c2cb]  text-[#13bec7]">
+      <div className="navbar mb-8 mx-auto border-solid border-b-4 border-[#24c2cb]  text-[#13bec7] bg-[#24c2cb]/20">
         <Link to="/">
           <div className="flex-auto ">
             <FaHome className="inline mx-2  text-3xl" />
@@ -43,7 +43,7 @@ function Navbar() {
           <Link to="/account/profile">
             <div
               className={`container flex items-center group ${
-                location.pathname === "/account"
+                location.pathname.startsWith("/account")
                   ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
                   : "text-slate-400"
               }`}

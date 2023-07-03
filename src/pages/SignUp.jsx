@@ -12,6 +12,7 @@ import {
 import { db } from "../firebase.config";
 import { Link, useNavigate } from "react-router-dom";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
+import Person from "../assets/person.jpg";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ function SignUp() {
 
       const user = userCredential.user;
       // console.log(userCredential);
-      console.log(user);
+      // console.log(user);
       updateProfile(auth.currentUser, {
         displayName: name,
       });

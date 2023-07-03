@@ -5,6 +5,8 @@ import { db } from "../firebase.config";
 import { updateDoc } from "firebase/firestore";
 import { FiEdit } from "react-icons/fi";
 import { MdOutlineDownloadDone } from "react-icons/md";
+import { HiUpload } from "react-icons/hi";
+import EmptyPic from "../assets/person.jpg";
 
 function Profile() {
   const navigate = useNavigate();
@@ -14,8 +16,9 @@ function Profile() {
   const [formData, setFormData] = useState({
     name: auth.currentUser?.displayName,
     email: auth.currentUser?.email,
+    image: auth.currentUser?.displayImage,
   });
-  const { name, email } = formData;
+  const { name, email, image } = formData;
 
   const onSubmit = () => {};
   const onChange = (e) => {
@@ -24,57 +27,80 @@ function Profile() {
       [e.target.id]: e.target.value,
     }));
   };
+  const handleImageChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      image: URL.createObjectURL(e.target.files.item(0)),
+    }));
+  };
   return (
-    <div className="mx-2">
-      <header className="flex justify-between mb-6">
-        <p className="text-2xl font-bold">Hello, {name}</p>
-        {/* <button
-          type="button"
-          className="btn border-solid border-b-4 border-[#faad09] btn-sm py-0 hover:border-solid hover:border-b-2 hover:border-[#faad09]"
-          onClick={onLogout}
+    <div className="mx-16 w-full">
+      <header className="font-bold text-3xl mb-12">Namaste, {name}</header>
+      <div
+        className="flex flex-col card card-compact border-solid border-4 border-[#13BEC7] rounded-lg
+       w-96 h-96 p-4"
+      >
+        <button
+          onClick={() => {
+            changeDetails && onSubmit();
+            setChangeDetails((prevState) => !prevState);
+          }}
+          className="self-end text-blue-600"
         >
-          LogOut
-        </button> */}
-      </header>
-      <main>
-        <div>
-          <div className="flex justify-between">
-            <h3>Your Profile</h3>
-            <button
-              onClick={() => {
-                changeDetails && onSubmit();
-                setChangeDetails((prevState) => !prevState);
-              }}
-            >
-              {changeDetails ? (
-                <MdOutlineDownloadDone className="text-blue-600" />
-              ) : (
-                <FiEdit className="text-blue-600" />
-              )}
-            </button>
-          </div>
-          <div className="card card-compact border-solid w-1/3 p-4 border-2 border-[#24c2cb]">
-            <form>
+          {changeDetails ? <MdOutlineDownloadDone /> : <FiEdit />}
+        </button>
+        <div className="relative flex items-center justify-center w-32 h-32 ring-4 ring-[#13BEC7] rounded-full overflow-hidden self-center mb-10">
+          <img
+            src={image || EmptyPic}
+            className={`w-full h-full ${changeDetails && "opacity-40"} `}
+            alt="profile pic"
+          />
+          {changeDetails && (
+            <>
               <input
-                type="text"
-                id="name"
-                value={name}
-                onChange={onChange}
-                className=""
-                disabled={!changeDetails}
+                type="file"
+                className="hidden"
+                id="image"
+                onChange={handleImageChange}
               />
-              <input
-                type="text"
-                id="email"
-                value={email}
-                onChange={onChange}
-                className=""
-                disabled={!changeDetails}
-              />
-            </form>
-          </div>
+              <label
+                htmlFor="image"
+                className="btn btn-neutral  absolute  text-blue-600 font-bold text-3xl"
+              >
+                <HiUpload />
+              </label>
+            </>
+          )}
         </div>
-      </main>
+        <form className="text-black flex flex-col gap-4 [&>*]:flex [&>*]:flex-col">
+          <div>
+            <label htmlFor="name" className="font-bold">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={onChange}
+              disabled={!changeDetails}
+              className="input border-solid border-2 rounded-md border-blue-600"
+            />
+          </div>
+          <div>
+            <label htmlFor="email" className="font-bold">
+              Email
+            </label>
+            <input
+              type="text"
+              id="email"
+              value={email}
+              onChange={onChange}
+              disabled={!changeDetails}
+              className="input border-solid border-2 rounded-md border-blue-600"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

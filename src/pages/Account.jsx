@@ -34,8 +34,8 @@ function Account() {
   };
 
   return (
-    <div className="flex m-16 grow">
-      <div className="flex flex-col basis-1/6 justify-between">
+    <div className="flex mx-10 grow">
+      <div className="flex flex-col basis-1/6 justify-between mt-12">
         <ul className="flex flex-col hover:[&>*]:font-bold [&>*]:rounded-sm [&>*]:p-2 justify-between gap-3 ">
           <Link
             to="/account/profile"
