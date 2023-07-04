@@ -2,12 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   margin: 0px;
   border: 0px;
   box-sizing: border-box;
-  
 }
-.btn{
+.btn {
   text-transform: capitalize;
+}
+.customdivider {
+  display: flex;
+  align-items: center;
+}
+.customdivider::before {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex: 1 0 auto;
+  content: "";
+}
+.customdivider::after {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex: 1 0 auto;
+  content: "";
 }

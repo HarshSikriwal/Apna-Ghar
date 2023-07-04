@@ -5,6 +5,7 @@ import { FaLock } from "react-icons/fa";
 import { AiFillEye } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import OAuth from "../components/OAuth";
 
 function SignIn() {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ function SignIn() {
           </div>
           <button
             type="submit"
-            className="btn w-full mb-2 bg-blue-700 text-white"
+            className="btn w-full mb-2 bg-blue-600 hover:bg-[#faad09] hover:text-black text-white"
           >
             Sign In
           </button>
@@ -85,6 +86,9 @@ function SignIn() {
         <Link to="/forgot-password" className="">
           <p className="text-right text-blue-700">Forgot Password?</p>
         </Link>
+
+        <div className="customdivider my-8">or</div>
+        <OAuth />
 
         <p className=" text-center">
           Already a user?{" "}

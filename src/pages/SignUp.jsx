@@ -12,7 +12,7 @@ import {
 import { db } from "../firebase.config";
 import { Link, useNavigate } from "react-router-dom";
 import { setDoc, doc, serverTimestamp } from "firebase/firestore";
-import Person from "../assets/person.jpg";
+import OAuth from "../components/OAuth";
 
 function SignUp() {
   const navigate = useNavigate();
@@ -43,6 +43,7 @@ function SignUp() {
 
       const user = userCredential.user;
       // console.log(userCredential);
+      // console.log(auth.currentUser);
       // console.log(user);
       updateProfile(auth.currentUser, {
         displayName: name,
@@ -50,7 +51,8 @@ function SignUp() {
 
       const formDataCopy = { ...formData };
       delete formDataCopy.password;
-      formDataCopy.timestamp = serverTimestamp();
+      (formDataCopy.imageURL = ""),
+        (formDataCopy.timestamp = serverTimestamp());
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
       navigate("/");
@@ -61,7 +63,7 @@ function SignUp() {
 
   return (
     <>
-      <div className="absolute container p-4 w-full md:w-1/3">
+      <div className="container p-4 w-full md:w-1/3">
         <header>
           <p className="font-bold text-2xl mb-12">Welcome Back!</p>
         </header>
@@ -106,7 +108,7 @@ function SignUp() {
           </div>
           <button
             type="submit"
-            className="btn w-full mb-2 bg-blue-700 text-white"
+            className="btn w-full mb-2 bg-blue-600 hover:bg-[#faad09] hover:text-black text-white"
           >
             Sign Up
           </button>
@@ -115,7 +117,8 @@ function SignUp() {
         <Link to="/forgot-password" className="">
           <p className="text-right text-blue-700">Forgot Password?</p>
         </Link>
-        <div className=""></div>
+        <div className="customdivider my-8">or</div>
+        <OAuth />
 
         <p className=" text-center">
           Already a user?{" "}

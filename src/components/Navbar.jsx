@@ -40,7 +40,7 @@ function Navbar() {
               <div className="text-lg pl-1">Offers</div>
             </div>
           </Link>
-          <Link to="/account/profile">
+          <Link to="/private-route">
             <div
               className={`container flex items-center group ${
                 location.pathname.startsWith("/account")

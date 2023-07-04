@@ -1,6 +1,6 @@
 function Listing() {
   return (
-    <div>
+    <div className="mx-16">
       <h2>Listings</h2>
     </div>
   );
