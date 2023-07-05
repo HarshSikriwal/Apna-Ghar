@@ -26,3 +26,9 @@
   flex: 1 0 auto;
   content: "";
 }
+#navbar {
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+}
+.card {
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}

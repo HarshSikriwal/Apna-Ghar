@@ -7,21 +7,21 @@ import { FaRegUser } from "react-icons/fa";
 function Navbar() {
   const location = useLocation();
   return (
-    <nav>
-      <div className="navbar mb-8 mx-auto border-solid border-b-4 border-[#24c2cb]  text-[#13bec7] bg-[#24c2cb]/20">
+    <nav className="z-10">
+      <div id="navbar" className="navbar mx-auto  text-[#FC6B6B] ">
         <Link to="/">
           <div className="flex-auto ">
             <FaHome className="inline mx-2  text-3xl" />
             <h3 className="inline align-middle font-mono text-2xl">ApnaGhar</h3>
           </div>
         </Link>
-        <div className="md:flex flex-auto justify-end hidden mr-2 gap-6 ">
+        <div className="md:flex flex-auto justify-end hidden mr-2 gap-6 font-bold ">
           <Link to="/">
             <div
               className={`container  flex items-center group ${
                 location.pathname === "/"
-                  ? "text-black border-solid pb-2 border-b-4 border-[#faad09]"
-                  : "text-slate-400"
+                  ? "text-black border-solid pb-2 border-b-4 border-[#FC6B6B]"
+                  : "text-slate-500"
               }`}
             >
               <MdOutlineExplore className="text-2xl group-hover:scale-110" />
@@ -32,8 +32,8 @@ function Navbar() {
             <div
               className={`container flex items-center group ${
                 location.pathname === "/offers"
-                  ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
-                  : "text-slate-400"
+                  ? "text-black pb-2 border-solid border-b-4 border-[#FC6B6B]"
+                  : "text-slate-500"
               }`}
             >
               <TbTag className="text-2xl group-hover:scale-110" />
@@ -44,8 +44,8 @@ function Navbar() {
             <div
               className={`container flex items-center group ${
                 location.pathname.startsWith("/account")
-                  ? "text-black pb-2 border-solid border-b-4 border-[#faad09]"
-                  : "text-slate-400"
+                  ? "text-black pb-2 border-solid border-b-4 border-[#FC6B6B]"
+                  : "text-slate-500"
               }`}
             >
               <FaRegUser className="text-2xl group-hover:scale-110" size="20" />

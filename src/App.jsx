@@ -10,6 +10,7 @@ import PrivateRoute from "./pages/PrivateRoute";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import Category from "./pages/Category";
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ function App() {
         {
           path: "/",
           element: <Explore />,
+        },
+        {
+          path: "category/:categoryName",
+          element: <Category />,
         },
         {
           path: "offers",
