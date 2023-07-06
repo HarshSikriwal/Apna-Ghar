@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaBed, FaBath } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 function ListingItem({ listing, id }) {
   return (
@@ -60,5 +61,9 @@ function ListingItem({ listing, id }) {
     </li>
   );
 }
+ListingItem.propTypes = {
+  listing: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default ListingItem;
