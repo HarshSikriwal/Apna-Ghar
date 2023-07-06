@@ -8,7 +8,7 @@ function Navbar() {
   const location = useLocation();
   return (
     <nav className="z-10">
-      <div id="navbar" className="navbar mx-auto  text-[#FC6B6B] ">
+      <div id="navbar" className="navbar mx-auto  text-[#FC6B6B] font-semibold">
         <Link to="/">
           <div className="flex-auto ">
             <FaHome className="inline mx-2  text-3xl" />
