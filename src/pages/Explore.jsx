@@ -5,7 +5,7 @@ import Slider from "../assets/Slider.jpg";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 function Explore() {
   return (
-    <div className="flex flex-col grow justify-between bg-[#FCCE6B]/80 w-full">
+    <div className="flex flex-col grow justify-between  w-full">
       <div className="absolute top-0 w-full h-[500px]">
         <img src={Slider} className="w-full h-full object-cover" />{" "}
       </div>

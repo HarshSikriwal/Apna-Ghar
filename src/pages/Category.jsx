@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import {
   collection,
-  doc,
   getDocs,
+  limit,
+  orderBy,
   query,
   where,
-  orderBy,
-  limit,
-  startAfter,
 } from "firebase/firestore";
-import { db } from "../firebase.config";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import ListingItem from "../components/ListingItem";
 import Spinner from "../components/Spinner";
+import { db } from "../firebase.config";
 
 function Category() {
   const [listings, setListings] = useState(null);
@@ -50,7 +49,7 @@ function Category() {
   }, [params.categoryName]);
 
   return (
-    <div className="">
+    <div className="mx-16 my-8">
       <header>
         <p className="text-3xl font-bold">
           {params.categoryName == "rent"
@@ -61,15 +60,17 @@ function Category() {
       {loading ? (
         <Spinner />
       ) : listings && listings.length > 0 ? (
-        <>
-          <main>
-            <ul>
-              {listings.map((listing) => (
-                <h3 key={listing.id}>{listing.data.name}</h3>
-              ))}
-            </ul>
-          </main>
-        </>
+        <main>
+          <ul className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
+            {listings.map((listing) => (
+              <ListingItem
+                listing={listing.data}
+                id={listing.id}
+                key={listing.id}
+              />
+            ))}
+          </ul>
+        </main>
       ) : (
         <p>No listings for {params.categoryName}</p>
       )}
