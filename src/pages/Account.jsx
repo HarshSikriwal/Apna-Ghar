@@ -19,7 +19,7 @@ function Account() {
             to="/account/profile"
             className={
               location.pathname === "/account/profile"
-                ? "bg-[#faad09]/60 font-bold"
+                ? "bg-[#FC6B6B] font-bold"
                 : ""
             }
           >
@@ -30,7 +30,7 @@ function Account() {
             to="/account/listing"
             className={
               location.pathname === "/account/listing"
-                ? "bg-[#faad09]/60 font-bold"
+                ? "bg-[#FC6B6B] font-bold"
                 : ""
             }
           >

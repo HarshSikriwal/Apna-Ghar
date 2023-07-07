@@ -50,7 +50,7 @@ function Category() {
 
   return (
     <div className="mx-16 my-8">
-      <header>
+      <header className="mb-4">
         <p className="text-3xl font-bold">
           {params.categoryName == "rent"
             ? "Places For Rent"

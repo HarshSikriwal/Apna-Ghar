@@ -68,7 +68,7 @@ function Profile() {
     <div className="mx-16">
       <header className="font-bold text-3xl mb-12">Namaste, {name}</header>
       <div
-        className="flex flex-col card card-compact border-solid border-4 border-[#13BEC7] rounded-lg
+        className="flex flex-col card card-compact noshadow bg-[#FC6B6B]/40 rounded-lg
        w-96 h-96 p-4"
       >
         <button
@@ -80,7 +80,7 @@ function Profile() {
         >
           {changeDetails ? <MdOutlineDownloadDone /> : <FiEdit />}
         </button>
-        <div className="relative flex items-center justify-center w-32 h-32 ring-4 ring-[#13BEC7] rounded-full overflow-hidden self-center mb-10">
+        <div className="relative flex items-center justify-center w-32 h-32 ring-2 ring-black rounded-full overflow-hidden self-center mb-10">
           <img
             src={imageURL || EmptyPic}
             className={`w-full h-full ${changeDetails && "opacity-40"} `}

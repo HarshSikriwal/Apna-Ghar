@@ -29,6 +29,9 @@
 #navbar {
   text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
 }
-.card {
+.card:not(.noshadow) {
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.card:hover:not(.noshadow) {
+  scale: 1.02;
 }
