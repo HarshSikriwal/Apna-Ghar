@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Category from "./pages/Category";
+import CreateListing from "./components/CreateListing";
 
 function App() {
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ function App() {
         {
           path: "category/:categoryName",
           element: <Category />,
+        },
+        {
+          path: "create-listing",
+          element: <CreateListing />,
         },
         {
           path: "offers",

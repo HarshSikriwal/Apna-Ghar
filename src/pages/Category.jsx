@@ -61,7 +61,7 @@ function Category() {
         <Spinner />
       ) : listings && listings.length > 0 ? (
         <main>
-          <ul className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
+          <ul className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-8 ">
             {listings.map((listing) => (
               <ListingItem
                 listing={listing.data}

@@ -34,7 +34,7 @@ function Explore() {
                 className="rounded-xl rounded-b-none w-96 h-[270px]"
               />
               <div className="flex justify-between items-center px-10 py-3 font-sans">
-                <p className="card-title text-2xl">Places On Rent</p>
+                <p className="card-title text-2xl">Places On Sale</p>
                 <FaArrowAltCircleRight className="text-3xl " />
               </div>
             </Link>
